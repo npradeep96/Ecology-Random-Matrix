@@ -1,0 +1,43 @@
+# Define model parameters
+# Model types
+# 1. Random interaction model
+# 2. Random predator-prey model
+# 3. Random mutualism model
+# 4. Random competition model
+# 5. Random mixture (competition+mutualism) model
+# 6. Random cascade predator-prey model
+# 7. Random niche predator-prey model
+# 8. Random bipartite mutualism model
+
+model_number, 1
+model_type, 5 
+C, 0.12
+N, 100
+sigma, 1
+d, 4
+target_directory,"/home/npradeep96/Projects/Ecology-Random-Matrix/outputs/mixture_add_predator"
+
+# Parameters to build model
+# Options to build model
+# 1. Simply build model based on the provided parameters
+# 2. Add additional interactions to the above base model
+
+assemble_option, 2
+add_type, 1
+# add_type:
+# 1. Add predator interactions to the model
+C_add, 0.25
+N_add, 800
+sigma_add, 4.0
+d_add, 4
+
+# Define options for model analysis
+# Analysis options. Toggle from 0 to 1 to perform analysis.
+
+analysis_file_name,"analysis_data.txt"
+
+generate_and_store_eigenvalues, 1
+eigenvalue_storage_file_name,"eigenvalues.hdf5"
+num_matrix, 1000
+
+calculate_probability_of_stability, 1

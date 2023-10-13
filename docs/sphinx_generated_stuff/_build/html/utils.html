@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>utils package &mdash; Stability of Ecological Communities  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="generate_eigenvalues module" href="generate_eigenvalues.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Stability of Ecological Communities
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Ecology-Random-Matrix</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="generate_eigenvalues.html">generate_eigenvalues module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">utils package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-utils.matrix_generation">utils.matrix_generation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-utils.model_analysis">utils.model_analysis module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-utils.model_assembly">utils.model_assembly module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-utils.plot_generation">utils.plot_generation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-utils">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Stability of Ecological Communities</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="modules.html">Ecology-Random-Matrix</a> &raquo;</li>
+      <li>utils package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/utils.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="utils-package">
+<h1>utils package<a class="headerlink" href="#utils-package" title="Permalink to this headline"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline"></a></h2>
+</section>
+<section id="module-utils.matrix_generation">
+<span id="utils-matrix-generation-module"></span><h2>utils.matrix_generation module<a class="headerlink" href="#module-utils.matrix_generation" title="Permalink to this headline"></a></h2>
+<p>Module that contains functions to generate many different species interaction models</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="utils.matrix_generation.random_competition_model">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">utils.matrix_generation.</span></span><span class="sig-name descname"><span class="pre">random_competition_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">N</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">C</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.matrix_generation.random_competition_model" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class definition for a random competition model for the ecosystem. This model takes in four parameters as described below and generates the community matrix <span class="math notranslate nohighlight">\(W\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>N</strong> (<em>int</em>) – Number of species in the ecosystem</p></li>
+<li><p><strong>C</strong> (<em>float</em>) – Connectance of the graph of interactions. This is the probability that the off-diagonal elements of the adjacency matrix is non-zero.</p></li>
+<li><p><strong>sigma</strong> (<em>float</em>) – Standard deviation of the gaussian distribution from which the interaction strengths are sampled.</p></li>
+<li><p><strong>d</strong> (<em>float</em>) – Strength of the self regulation. This is added as a diagonal element in the community matrix.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Variables</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>N</strong> (<em>int</em>) – </p></li>
+<li><p><strong>C</strong> (<em>float</em>) – </p></li>
+<li><p><strong>sigma</strong> (<em>float</em>) – </p></li>
+<li><p><strong>d</strong> (<em>float</em>) – </p></li>
+<li><p><strong>adjacency_matrix</strong> (<em>boolean numpy 2darray</em>) – Adjacency matrix capturing the network of species-species interactions. This is generated by the function <code class="docutils literal notranslate"><span class="pre">adjacency_matrix()</span></code></p></li>
+<li><p><strong>community_matrix</strong> (<em>float numpy 2darray</em>) – Community matrix containing pairwise interaction strengths between each pair of species. This is generated by the function <code class="docutils literal notranslate"><span class="pre">community_matrix()</span></code></p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.matrix_generation.random_competition_model.adjacency_matrix">
+<span class="sig-name descname"><span class="pre">adjacency_matrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils.matrix_generation.random_competition_model.adjacency_matrix" title="Permalink to this definition"></a></dt>
+<dd><p>Function that generates an adjacency matrix for a random graph, where each link has a probability C of being present. In addition, this also imposes the constraint that if a link between <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span> exists, then a link between <span class="math notranslate nohighlight">\(j\)</span> and <span class="math notranslate nohighlight">\(i\)</span> exists as well</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.matrix_generation.random_competition_model.community_matrix">
+<span class="sig-name descname"><span class="pre">community_matrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils.matrix_generation.random_competition_model.community_matrix" title="Permalink to this definition"></a></dt>
+<dd><p>Function that generates a random community matrix for competitive interactions. The pairs of off-diagonal elements <span class="math notranslate nohighlight">\(W_{ij}\)</span> and <span class="math notranslate nohighlight">\(W_{ji}\)</span> are each sampled independently from a distribution of <span class="math notranslate nohighlight">\(|X|\)</span> where <span class="math notranslate nohighlight">\(X \sim \mathcal{N}(0,\sigma^2)\)</span>. It is also ensured that <span class="math notranslate nohighlight">\(W_{ij}\)</span> and <span class="math notranslate nohighlight">\(W_{ji}\)</span> have -ve sign</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="utils.matrix_generation.random_interaction_model">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">utils.matrix_generation.</span></span><span class="sig-name descname"><span class="pre">random_interaction_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">N</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">C</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.matrix_generation.random_interaction_model" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class definition for a random interaction model for the ecosystem. This model takes in four parameters as described below and generates the community matrix <span class="math notranslate nohighlight">\(W\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>N</strong> (<em>int</em>) – Number of species in the ecosystem</p></li>
+<li><p><strong>C</strong> (<em>float</em>) – Connectance of the graph of interactions. This is the probability that the off-diagonal elements of the adjacency matrix is non-zero.</p></li>
+<li><p><strong>sigma</strong> (<em>float</em>) – Standard deviation of the gaussian distribution from which the interaction strengths are sampled.</p></li>
+<li><p><strong>d</strong> (<em>float</em>) – Strength of the self regulation. This is added as a diagonal element in the community matrix.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Variables</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>N</strong> (<em>int</em>) – </p></li>
+<li><p><strong>C</strong> (<em>float</em>) – </p></li>
+<li><p><strong>sigma</strong> (<em>float</em>) – </p></li>
+<li><p><strong>d</strong> (<em>float</em>) – </p></li>
+<li><p><strong>adjacency_matrix</strong> (<em>boolean numpy 2darray</em>) – Adjacency matrix capturing the network of species-species interactions. This is generated by the function <code class="docutils literal notranslate"><span class="pre">adjacency_matrix()</span></code></p></li>
+<li><p><strong>community_matrix</strong> (<em>float numpy 2darray</em>) – Community matrix containing pairwise interaction strengths between each pair of species. This is generated by the function <code class="docutils literal notranslate"><span class="pre">community_matrix()</span></code></p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.matrix_generation.random_interaction_model.adjacency_matrix">
+<span class="sig-name descname"><span class="pre">adjacency_matrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils.matrix_generation.random_interaction_model.adjacency_matrix" title="Permalink to this definition"></a></dt>
+<dd><p>Function that generates an adjacency matrix for a random graph, where each link has a probability <span class="math notranslate nohighlight">\(C\)</span> of being present, and stores it in an adjacency matrix attribute</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.matrix_generation.random_interaction_model.community_matrix">
+<span class="sig-name descname"><span class="pre">community_matrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils.matrix_generation.random_interaction_model.community_matrix" title="Permalink to this definition"></a></dt>
+<dd><p>Function that generates a random community matrix of species-species interactions, where each element is drawn from a zero-mean normal distribution with variance <span class="math notranslate nohighlight">\(\sigma^2\)</span></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="utils.matrix_generation.random_mixture_model">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">utils.matrix_generation.</span></span><span class="sig-name descname"><span class="pre">random_mixture_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">N</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">C</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.matrix_generation.random_mixture_model" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class definition for a random mixture model including competitive and mutualistic interactions for the ecosystem. This model takes in four parameters as described below and generates the community matrix <span class="math notranslate nohighlight">\(W\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>N</strong> (<em>int</em>) – Number of species in the ecosystem</p></li>
+<li><p><strong>C</strong> (<em>float</em>) – Connectance of the graph of interactions. This is the probability that the off-diagonal elements of the adjacency matrix is non-zero.</p></li>
+<li><p><strong>sigma</strong> (<em>float</em>) – Standard deviation of the gaussian distribution from which the interaction strengths are sampled.</p></li>
+<li><p><strong>d</strong> (<em>float</em>) – Strength of the self regulation. This is added as a diagonal element in the community matrix.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Variables</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>N</strong> (<em>int</em>) – </p></li>
+<li><p><strong>C</strong> (<em>float</em>) – </p></li>
+<li><p><strong>sigma</strong> (<em>float</em>) – </p></li>
+<li><p><strong>d</strong> (<em>float</em>) – </p></li>
+<li><p><strong>adjacency_matrix</strong> (<em>boolean numpy 2darray</em>) – Adjacency matrix capturing the network of species-species interactions. This is generated by the function <code class="docutils literal notranslate"><span class="pre">adjacency_matrix()</span></code></p></li>
+<li><p><strong>community_matrix</strong> (<em>float numpy 2darray</em>) – Community matrix containing pairwise interaction strengths between each pair of species. This is generated by the function <code class="docutils literal notranslate"><span class="pre">community_matrix()</span></code></p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.matrix_generation.random_mixture_model.adjacency_matrix">
+<span class="sig-name descname"><span class="pre">adjacency_matrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils.matrix_generation.random_mixture_model.adjacency_matrix" title="Permalink to this definition"></a></dt>
+<dd><p>Function that generates an adjacency matrix for a random graph, where each link has a probability C of being present. In addition, this also imposes the constraint that if a link between <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span> exists, then a link between <span class="math notranslate nohighlight">\(j\)</span> and <span class="math notranslate nohighlight">\(i\)</span> exists as well</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.matrix_generation.random_mixture_model.community_matrix">
+<span class="sig-name descname"><span class="pre">community_matrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils.matrix_generation.random_mixture_model.community_matrix" title="Permalink to this definition"></a></dt>
+<dd><p>Function that generates a random community matrix of a mixture of competition and mutualistic interactions. The pairs of off-diagonal elements <span class="math notranslate nohighlight">\(W_{ij}\)</span> and <span class="math notranslate nohighlight">\(W_{ji}\)</span> are each sampled independently from a distribution of <span class="math notranslate nohighlight">\(|X|\)</span> where <span class="math notranslate nohighlight">\(X \sim \mathcal{N}(0,\sigma^2)\)</span>. The signs of <span class="math notranslate nohighlight">\(W_{ij}\)</span> and <span class="math notranslate nohighlight">\(W_{ji}\)</span> are randomly of same sign or opposite sign</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="utils.matrix_generation.random_mutualism_bipartite_model">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">utils.matrix_generation.</span></span><span class="sig-name descname"><span class="pre">random_mutualism_bipartite_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">N</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">C</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.matrix_generation.random_mutualism_bipartite_model" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class definition for a bipartite model for mutualistic interactions for the ecosystem. This model takes in four parameters as described below and generates the community matrix <span class="math notranslate nohighlight">\(W\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>N</strong> (<em>int</em>) – Number of species in the ecosystem</p></li>
+<li><p><strong>C</strong> (<em>float</em>) – Connectance of the graph of interactions. This is the probability that the off-diagonal elements of the adjacency matrix is non-zero.</p></li>
+<li><p><strong>sigma</strong> (<em>float</em>) – Standard deviation of the gaussian distribution from which the interaction strengths are sampled.</p></li>
+<li><p><strong>d</strong> (<em>float</em>) – Strength of the self regulation. This is added as a diagonal element in the community matrix.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Variables</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>N</strong> (<em>int</em>) – </p></li>
+<li><p><strong>C</strong> (<em>float</em>) – </p></li>
+<li><p><strong>sigma</strong> (<em>float</em>) – </p></li>
+<li><p><strong>d</strong> (<em>float</em>) – </p></li>
+<li><p><strong>adjacency_matrix</strong> (<em>boolean numpy 2darray</em>) – Adjacency matrix capturing the network of species-species interactions. This is generated by the function <code class="docutils literal notranslate"><span class="pre">adjacency_matrix()</span></code></p></li>
+<li><p><strong>community_matrix</strong> (<em>float numpy 2darray</em>) – Community matrix containing pairwise interaction strengths between each pair of species. This is generated by the function <code class="docutils literal notranslate"><span class="pre">community_matrix()</span></code></p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.matrix_generation.random_mutualism_bipartite_model.adjacency_matrix">
+<span class="sig-name descname"><span class="pre">adjacency_matrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils.matrix_generation.random_mutualism_bipartite_model.adjacency_matrix" title="Permalink to this definition"></a></dt>
+<dd><p>Function to generate the adjacency matrix for a bipartite graph. We split the total number of <span class="math notranslate nohighlight">\(N\)</span> nodes into two groups, each of size <span class="math notranslate nohighlight">\(N/2\)</span>. For each pair <span class="math notranslate nohighlight">\((i,j)\)</span> where <span class="math notranslate nohighlight">\(i\)</span> is from group 1 and <span class="math notranslate nohighlight">\(j\)</span> is from group 2, we make <span class="math notranslate nohighlight">\(A_{ij}\)</span> and <span class="math notranslate nohighlight">\(A_{ji}\)</span> non-zero with a probability <span class="math notranslate nohighlight">\(2C(N-1)/N\)</span>. This ensures that the connectance is <span class="math notranslate nohighlight">\(C\)</span>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.matrix_generation.random_mutualism_bipartite_model.community_matrix">
+<span class="sig-name descname"><span class="pre">community_matrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils.matrix_generation.random_mutualism_bipartite_model.community_matrix" title="Permalink to this definition"></a></dt>
+<dd><p>Function that generates a random community matrix for bipartite mutualistic interactions between species. Each non-zero element is derived from a distribution <span class="math notranslate nohighlight">\(|X|\)</span> where <span class="math notranslate nohighlight">\(X \sim \mathcal{N}(0,\sigma^2)\)</span></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="utils.matrix_generation.random_mutualism_model">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">utils.matrix_generation.</span></span><span class="sig-name descname"><span class="pre">random_mutualism_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">N</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">C</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.matrix_generation.random_mutualism_model" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class definition for a random mutualism model for the ecosystem. This model takes in four parameters as described below and generates the community matrix <span class="math notranslate nohighlight">\(W\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>N</strong> (<em>int</em>) – Number of species in the ecosystem</p></li>
+<li><p><strong>C</strong> (<em>float</em>) – Connectance of the graph of interactions. This is the probability that the off-diagonal elements of the adjacency matrix is non-zero.</p></li>
+<li><p><strong>sigma</strong> (<em>float</em>) – Standard deviation of the gaussian distribution from which the interaction strengths are sampled.</p></li>
+<li><p><strong>d</strong> (<em>float</em>) – Strength of the self regulation. This is added as a diagonal element in the community matrix.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Variables</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>N</strong> (<em>int</em>) – </p></li>
+<li><p><strong>C</strong> (<em>float</em>) – </p></li>
+<li><p><strong>sigma</strong> (<em>float</em>) – </p></li>
+<li><p><strong>d</strong> (<em>float</em>) – </p></li>
+<li><p><strong>adjacency_matrix</strong> (<em>boolean numpy 2darray</em>) – Adjacency matrix capturing the network of species-species interactions. This is generated by the function <code class="docutils literal notranslate"><span class="pre">adjacency_matrix()</span></code></p></li>
+<li><p><strong>community_matrix</strong> (<em>float numpy 2darray</em>) – Community matrix containing pairwise interaction strengths between each pair of species. This is generated by the function <code class="docutils literal notranslate"><span class="pre">community_matrix()</span></code></p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.matrix_generation.random_mutualism_model.adjacency_matrix">
+<span class="sig-name descname"><span class="pre">adjacency_matrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils.matrix_generation.random_mutualism_model.adjacency_matrix" title="Permalink to this definition"></a></dt>
+<dd><p>Function that generates an adjacency matrix for a random graph, where each link has a probability C of being present. In addition, this also imposes the constraint that if a link between <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span> exists, then a link between <span class="math notranslate nohighlight">\(j\)</span> and <span class="math notranslate nohighlight">\(i\)</span> exists as well</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.matrix_generation.random_mutualism_model.community_matrix">
+<span class="sig-name descname"><span class="pre">community_matrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils.matrix_generation.random_mutualism_model.community_matrix" title="Permalink to this definition"></a></dt>
+<dd><p>Function that generates a random community matrix for mutualistic interactions. The pairs of off-diagonal elements <span class="math notranslate nohighlight">\(W_{ij}\)</span> and <span class="math notranslate nohighlight">\(W_{ji}\)</span> are each sampled independently from a distribution of <span class="math notranslate nohighlight">\(|X|\)</span> where <span class="math notranslate nohighlight">\(X \sim \mathcal{N}(0,\sigma^2)\)</span>. It is also ensured that <span class="math notranslate nohighlight">\(W_{ij}\)</span> and <span class="math notranslate nohighlight">\(W_{ji}\)</span> have +ve sign.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="utils.matrix_generation.random_predator_prey_cascade_model">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">utils.matrix_generation.</span></span><span class="sig-name descname"><span class="pre">random_predator_prey_cascade_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">N</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">C</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.matrix_generation.random_predator_prey_cascade_model" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class definition for a cascade model for predator-prey interactions for the ecosystem. This model takes in four parameters as described below and generates the community matrix <span class="math notranslate nohighlight">\(W\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>N</strong> (<em>int</em>) – Number of species in the ecosystem</p></li>
+<li><p><strong>C</strong> (<em>float</em>) – Connectance of the graph of interactions. This is the probability that the off-diagonal elements of the adjacency matrix is non-zero.</p></li>
+<li><p><strong>sigma</strong> (<em>float</em>) – Standard deviation of the gaussian distribution from which the interaction strengths are sampled.</p></li>
+<li><p><strong>d</strong> (<em>float</em>) – Strength of the self regulation. This is added as a diagonal element in the community matrix.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Variables</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>N</strong> (<em>int</em>) – </p></li>
+<li><p><strong>C</strong> (<em>float</em>) – </p></li>
+<li><p><strong>sigma</strong> (<em>float</em>) – </p></li>
+<li><p><strong>d</strong> (<em>float</em>) – </p></li>
+<li><p><strong>adjacency_matrix</strong> (<em>boolean numpy 2darray</em>) – Adjacency matrix capturing the network of species-species interactions. This is generated by the function <code class="docutils literal notranslate"><span class="pre">adjacency_matrix()</span></code></p></li>
+<li><p><strong>community_matrix</strong> (<em>float numpy 2darray</em>) – Community matrix containing pairwise interaction strengths between each pair of species. This is generated by the function <code class="docutils literal notranslate"><span class="pre">community_matrix()</span></code></p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.matrix_generation.random_predator_prey_cascade_model.adjacency_matrix">
+<span class="sig-name descname"><span class="pre">adjacency_matrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils.matrix_generation.random_predator_prey_cascade_model.adjacency_matrix" title="Permalink to this definition"></a></dt>
+<dd><p>Function that generates an adjacency matrix for a random graph, where each link has a probability C of being present. In addition, this also imposes the constraint that if a link between <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span> exists, then a link between <span class="math notranslate nohighlight">\(j\)</span> and <span class="math notranslate nohighlight">\(i\)</span> exists as well</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.matrix_generation.random_predator_prey_cascade_model.community_matrix">
+<span class="sig-name descname"><span class="pre">community_matrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils.matrix_generation.random_predator_prey_cascade_model.community_matrix" title="Permalink to this definition"></a></dt>
+<dd><p>Function that generates a random community matrix of predator-prey interactions according to the cascade model. In the cascade model, the lower triangular elements <span class="math notranslate nohighlight">\(W_{ij}\)</span> are sampled from a distribution of <span class="math notranslate nohighlight">\(|X|\)</span> where <span class="math notranslate nohighlight">\(X \sim \mathcal{N}(0,\sigma^2)\)</span>. The upper triangular element <span class="math notranslate nohighlight">\(W_{ji}\)</span> corresponding to the <span class="math notranslate nohighlight">\(W_{ij}\)</span> is sampled from the distribution of <span class="math notranslate nohighlight">\(-|X|\)</span> where <span class="math notranslate nohighlight">\(X \sim \mathcal{N}(0,\sigma^2)\)</span></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="utils.matrix_generation.random_predator_prey_model">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">utils.matrix_generation.</span></span><span class="sig-name descname"><span class="pre">random_predator_prey_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">N</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">C</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.matrix_generation.random_predator_prey_model" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class definition for a random predator-prey model for the ecosystem. This model takes in four parameters as described below and generates the community matrix <span class="math notranslate nohighlight">\(W\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>N</strong> (<em>int</em>) – Number of species in the ecosystem</p></li>
+<li><p><strong>C</strong> (<em>float</em>) – Connectance of the graph of interactions. This is the probability that the off-diagonal elements of the adjacency matrix is non-zero.</p></li>
+<li><p><strong>sigma</strong> (<em>float</em>) – Standard deviation of the gaussian distribution from which the interaction strengths are sampled.</p></li>
+<li><p><strong>d</strong> (<em>float</em>) – Strength of the self regulation. This is added as a diagonal element in the community matrix.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Variables</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>N</strong> (<em>int</em>) – </p></li>
+<li><p><strong>C</strong> (<em>float</em>) – </p></li>
+<li><p><strong>sigma</strong> (<em>float</em>) – </p></li>
+<li><p><strong>d</strong> (<em>float</em>) – </p></li>
+<li><p><strong>adjacency_matrix</strong> (<em>boolean numpy 2darray</em>) – Adjacency matrix capturing the network of species-species interactions. This is generated by the function <code class="docutils literal notranslate"><span class="pre">adjacency_matrix()</span></code></p></li>
+<li><p><strong>community_matrix</strong> (<em>float numpy 2darray</em>) – Community matrix containing pairwise interaction strengths between each pair of species. This is generated by the function <code class="docutils literal notranslate"><span class="pre">community_matrix()</span></code></p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.matrix_generation.random_predator_prey_model.adjacency_matrix">
+<span class="sig-name descname"><span class="pre">adjacency_matrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils.matrix_generation.random_predator_prey_model.adjacency_matrix" title="Permalink to this definition"></a></dt>
+<dd><p>Function that generates an adjacency matrix for a random graph, where each link has a probability C of being present. In addition, this also imposes the constraint that if a link between <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span> exists, then a link between <span class="math notranslate nohighlight">\(j\)</span> and <span class="math notranslate nohighlight">\(i\)</span> exists as well</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.matrix_generation.random_predator_prey_model.community_matrix">
+<span class="sig-name descname"><span class="pre">community_matrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils.matrix_generation.random_predator_prey_model.community_matrix" title="Permalink to this definition"></a></dt>
+<dd><p>Function that generates a random community matrix of predator-prey interactions. The pairs of off-diagonal elements <span class="math notranslate nohighlight">\(W_{ij}\)</span> and <span class="math notranslate nohighlight">\(W_{ji}\)</span> are each sampled independently from a distribution of <span class="math notranslate nohighlight">\(|X|\)</span> where <span class="math notranslate nohighlight">\(X \sim \mathcal{N}(0,\sigma^2)\)</span>. It is also ensured that <span class="math notranslate nohighlight">\(W_{ij}\)</span> and <span class="math notranslate nohighlight">\(W_{ji}\)</span> have opposite signs.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="utils.matrix_generation.random_predator_prey_niche_model">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">utils.matrix_generation.</span></span><span class="sig-name descname"><span class="pre">random_predator_prey_niche_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">N</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">C</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.matrix_generation.random_predator_prey_niche_model" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class definition for a niche model for predator-prey interactions for the ecosystem. This model takes in four parameters as described below and generates the community matrix <span class="math notranslate nohighlight">\(W\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>N</strong> (<em>int</em>) – Number of species in the ecosystem</p></li>
+<li><p><strong>C</strong> (<em>float</em>) – Connectance of the graph of interactions. This is the probability that the off-diagonal elements of the adjacency matrix is non-zero.</p></li>
+<li><p><strong>sigma</strong> (<em>float</em>) – Standard deviation of the gaussian distribution from which the interaction strengths are sampled.</p></li>
+<li><p><strong>d</strong> (<em>float</em>) – Strength of the self regulation. This is added as a diagonal element in the community matrix.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Variables</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>N</strong> (<em>int</em>) – </p></li>
+<li><p><strong>C</strong> (<em>float</em>) – </p></li>
+<li><p><strong>sigma</strong> (<em>float</em>) – </p></li>
+<li><p><strong>d</strong> (<em>float</em>) – </p></li>
+<li><p><strong>adjacency_matrix</strong> (<em>boolean numpy 2darray</em>) – Adjacency matrix capturing the network of species-species interactions. This is generated by the function <code class="docutils literal notranslate"><span class="pre">adjacency_matrix()</span></code></p></li>
+<li><p><strong>community_matrix</strong> (<em>float numpy 2darray</em>) – Community matrix containing pairwise interaction strengths between each pair of species. This is generated by the function <code class="docutils literal notranslate"><span class="pre">community_matrix()</span></code></p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.matrix_generation.random_predator_prey_niche_model.adjacency_matrix">
+<span class="sig-name descname"><span class="pre">adjacency_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.matrix_generation.random_predator_prey_niche_model.adjacency_matrix" title="Permalink to this definition"></a></dt>
+<dd><p>Function that generates an adjacency matrix for a niche connectivity model. Niche Model (as described in: <a class="reference external" href="https://rdrr.io/github/elsander/PredictImportance/src/R/BuildNiche.R">https://rdrr.io/github/elsander/PredictImportance/src/R/BuildNiche.R</a>)</p>
+<ol class="arabic simple">
+<li><p>In a niche model, each species is assigned a niche value (<span class="math notranslate nohighlight">\(n_i\)</span>), which is sampled uniformly between <span class="math notranslate nohighlight">\([0,1]\)</span></p></li>
+<li><p>This niche value (<span class="math notranslate nohighlight">\(n_i\)</span>) is used to compute a niche radius (<span class="math notranslate nohighlight">\(r_i\)</span>) where <span class="math notranslate nohighlight">\(r_i = X n_i\)</span>, where <span class="math notranslate nohighlight">\(X \sim Beta(1,1/C-1)\)</span>. The above method also ensures that the connectance of the graph is <span class="math notranslate nohighlight">\(C\)</span> on average. There might be fluctuations about the mean value of <span class="math notranslate nohighlight">\(C\)</span> for small graphs</p></li>
+<li><p>A niche center (<span class="math notranslate nohighlight">\(c_i\)</span>) is chosen for each species by uniformly sampling the interval <span class="math notranslate nohighlight">\([r_i/2, min(n_i, 1-r_i/2)]\)</span>. The point is to ensure that the interval <span class="math notranslate nohighlight">\([c_i-r_i/2, c_i+r_i/2]\)</span> lies entirely within <span class="math notranslate nohighlight">\([0,1]\)</span> and is centered around ni on average whenever possible.</p></li>
+<li><p>Each species <span class="math notranslate nohighlight">\(i\)</span> preys upon all species <span class="math notranslate nohighlight">\(j\)</span> whose niche values <span class="math notranslate nohighlight">\(n_j\)</span> belong to the interval <span class="math notranslate nohighlight">\([c_i-r_i/2, c_i+r_i/2]\)</span></p></li>
+<li><p>Using the above model, construct a matrix <span class="math notranslate nohighlight">\(A_{ij}\)</span> where <span class="math notranslate nohighlight">\(A_{ij} = 1\)</span> if <span class="math notranslate nohighlight">\(i\)</span> is a prey of <span class="math notranslate nohighlight">\(j\)</span></p></li>
+<li><p>Construct a sign matrix <span class="math notranslate nohighlight">\(P = -A + A'\)</span></p></li>
+<li><p>Finally, the community matrix is obtained by multiplying <span class="math notranslate nohighlight">\(P\)</span> with a random matrix of elements sampled from <span class="math notranslate nohighlight">\(|X|\)</span> where <span class="math notranslate nohighlight">\(X \sim \mathcal{N}(0,\sigma^2)\)</span></p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.matrix_generation.random_predator_prey_niche_model.community_matrix">
+<span class="sig-name descname"><span class="pre">community_matrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils.matrix_generation.random_predator_prey_niche_model.community_matrix" title="Permalink to this definition"></a></dt>
+<dd><p>Function that generates a random community matrix of predator-prey interactions according to the niche model.In the Niche model, the adjacency matrix is generated corresponding the niche algorithm. The individual non-zero elements of the community matrix are generated according to the distribution <span class="math notranslate nohighlight">\(|X|\)</span> where <span class="math notranslate nohighlight">\(X \sim \mathcal{N}(0,\sigma^2)\)</span> and multiplying them with the appropriate sign in the signed adjacency matrix</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-utils.model_analysis">
+<span id="utils-model-analysis-module"></span><h2>utils.model_analysis module<a class="headerlink" href="#module-utils.model_analysis" title="Permalink to this headline"></a></h2>
+<p>Module that performs different kinds onf analysis on the assembled model</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.model_analysis.compute_and_store_eigenvalues">
+<span class="sig-prename descclassname"><span class="pre">utils.model_analysis.</span></span><span class="sig-name descname"><span class="pre">compute_and_store_eigenvalues</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_file_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_matrix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isparallel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numcores</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.model_analysis.compute_and_store_eigenvalues" title="Permalink to this definition"></a></dt>
+<dd><p>Function that computes eigenvalues from a community matrix that belongs to <code class="docutils literal notranslate"><span class="pre">model</span></code> and stores it in <code class="docutils literal notranslate"><span class="pre">target_directory</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> (<em>model class object</em>) – A model class object that was either defined by one of the classes in <code class="docutils literal notranslate"><span class="pre">matrix_generation.py</span></code> or assembled by <code class="docutils literal notranslate"><span class="pre">model_assembly.py</span></code></p></li>
+<li><p><strong>target_file_name</strong> – Target filename to store the eigenvalues</p></li>
+<li><p><strong>num_matrix</strong> (<em>int</em>) – Number of random matrices to sample to generate eigenvalues. Default value = 1000</p></li>
+<li><p><strong>isparallel</strong> (<em>bool</em>) – Whether to use embarassingly parallel loops to compute eigenvalues. Default = True</p></li>
+<li><p><strong>numcores</strong> (<em>int</em>) – Number of cores to use in embarassingly parallel loops. Default = 16</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-utils.model_assembly">
+<span id="utils-model-assembly-module"></span><h2>utils.model_assembly module<a class="headerlink" href="#module-utils.model_assembly" title="Permalink to this headline"></a></h2>
+<p>Module that assembles a final community matrix</p>
+</section>
+<section id="module-utils.plot_generation">
+<span id="utils-plot-generation-module"></span><h2>utils.plot_generation module<a class="headerlink" href="#module-utils.plot_generation" title="Permalink to this headline"></a></h2>
+<p>Module that contains functions to plot and analyze community matrices associated with different ecosystems</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.plot_generation.plot_adjacency_matrix">
+<span class="sig-prename descclassname"><span class="pre">utils.plot_generation.</span></span><span class="sig-name descname"><span class="pre">plot_adjacency_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.plot_generation.plot_adjacency_matrix" title="Permalink to this definition"></a></dt>
+<dd><p>Function that plots the adjacency matrix of an array containing either 
+(a) 0’s and 1’s or
+(b) 0’s, 1’s and -1’s</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>A</strong> (<em>boolean</em><em> or </em><em>int numpy 2darray</em>) – adjacency matrix</p></li>
+<li><p><strong>axes</strong> (<em>axes object</em>) – matplotlib axes object</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return plot_obj</dt>
+<dd class="field-even"><p>handle to the plotted object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.plot_generation.plot_community_matrix">
+<span class="sig-prename descclassname"><span class="pre">utils.plot_generation.</span></span><span class="sig-name descname"><span class="pre">plot_community_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">W</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.plot_generation.plot_community_matrix" title="Permalink to this definition"></a></dt>
+<dd><p>Function that plots the community matrix of an array containing either</p>
+<ol class="loweralpha simple">
+<li><p>all positive elements</p></li>
+<li><p>a mixture of positive and negative elements</p></li>
+</ol>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>W</strong> (<em>float numpy 2darray</em>) – community matrix</p></li>
+<li><p><strong>axes</strong> (<em>axes object</em>) – matplotlib axes object</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return plot_obj</dt>
+<dd class="field-even"><p>handle to the plotted object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.plot_generation.scatter_plot_eigenvalues">
+<span class="sig-prename descclassname"><span class="pre">utils.plot_generation.</span></span><span class="sig-name descname"><span class="pre">scatter_plot_eigenvalues</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eigenvals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xrange</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yrange</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.plot_generation.scatter_plot_eigenvalues" title="Permalink to this definition"></a></dt>
+<dd><p>Function that plots a scatter plot of eigenvalues in the real and imaginary space</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>eigenvals</strong> (<em>float numpy 1darray</em>) – array of complex valued eigenvalues</p></li>
+<li><p><strong>xrange</strong> (<em>2x1 list</em>) – a 2x1 containing [xmin, xmax]</p></li>
+<li><p><strong>yrange</strong> (<em>2x1 list</em>) – a 2x1 containing [ymin, ymax]</p></li>
+<li><p><strong>axes</strong> (<em>axes object</em>) – matplotlib axes object</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return plot_obj</dt>
+<dd class="field-even"><p>handle to the plotted object</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-utils">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-utils" title="Permalink to this headline"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="generate_eigenvalues.html" class="btn btn-neutral float-left" title="generate_eigenvalues module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Pradeep Natarajan.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
